@@ -1,1 +1,4 @@
-# backend-fast-buy
+# backend-demo-graphics 
+npm install
+
+npm start
