@@ -48,7 +48,7 @@ Product.findAll = function (result) {
   dbConn.query("SELECT * FROM products", (err, rows) => {
     //if (err) return res.status(500).send("server error");
   //  if (err) return result(err, null);
-    rows.map((img) => {
+    rows?.map((img) => {
       fs.writeFileSync(
         path.join(__dirname, "../dbimages/" + img.id + "-monkeywit.jpg"),
         img.image
