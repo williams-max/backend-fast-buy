@@ -30,6 +30,8 @@ const fileUpload = multer({
 var dbConn = require("../../config/db.config");
 
 router.post("/v2/addimg", fileUpload, (req, res) => {
+
+  console.log("sssss ",req.body)
   const type = req.file.mimetype;
   const name = req.file.originalname;
   const data = fs.readFileSync(
@@ -38,10 +40,10 @@ router.post("/v2/addimg", fileUpload, (req, res) => {
 
   
   const newEmp = {
-    title: "test title",
-    price: "78",
+    title:req.body.title,
+    price:req.body.price,
     image: data,
-    category: "hogar",
+    category:req.body.category,
   };
 
   dbConn.query("INSERT INTO products set ?", newEmp, function (err, res) {
