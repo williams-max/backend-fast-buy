@@ -10,7 +10,7 @@ const dbConn = mysql.createConnection({
   host: 'mysql-chevy.alwaysdata.net',
   user: 'chevy_free',
   password: 'adivinala',
-  database: 'chevy_logsdb'
+  database: 'chevy_dbfazt'
 });
 dbConn.connect(
     function (error) {
